@@ -22,8 +22,9 @@ scatterplot3d(df$sleep_hrs,df$study_hrs,df$play_hrs,xlab="sleeping hours")
 
 #c
 barplot(df$age,names.arg=(df$name),col='red',ylab='age',xlab='student name',main='barplot for student ages')
-barplot(df$age,col='green',ylab='age',names.org=(df$name))
+barplot(df$age,col='green',ylab='age',names.arg=(df$name))
 barplot(df$sleep_hrs,names.arg=(df$name),ylab='sleeping hours',col='red')
 pie(df$play_hrs,label=df$name,main='pie chart for student playing hrs',col=c('red','orange','yellow','blue','green','pink','black','white'))
 summary(df$age)
+
 list(df$age,col='green',xlab='ages',main='histogram for age variable',border='red')
