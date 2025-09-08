@@ -27,4 +27,5 @@ barplot(df$sleep_hrs,names.arg=(df$name),ylab='sleeping hours',col='red')
 pie(df$play_hrs,label=df$name,main='pie chart for student playing hrs',col=c('red','orange','yellow','blue','green','pink','black','white'))
 summary(df$age)
 
-list(df$age,col='green',xlab='ages',main='histogram for age variable',border='red')
+hist(df$age,col='green',xlab='ages',main='histogram for age variable',border='red')
+
