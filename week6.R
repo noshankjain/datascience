@@ -52,3 +52,34 @@ abline(a = 0, b = 1, col = "blue", lwd = 2)
 # Calculate RMSE (Root Mean Squared Error)
 err <- sqrt(mean((df$weight - prdct_value)^2))
 err
+
+
+
+
+
+
+
+# Plot Actual vs Predicted values
+plot(df$weight, prdct_value, 
+     col = "darkgreen", pch = 16,
+     xlab = "Actual Weight", ylab = "Predicted Weight",
+     main = "Actual vs Predicted Weight",
+     xlim = range(c(df$weight, prdct_value)),
+     ylim = range(c(df$weight, prdct_value)))
+
+# Add identity line (perfect predictions line)
+abline(a = 0, b = 1, col = "blue", lwd = 2, lty = 2)
+
+# Add regression line between actual and predicted
+fit_line <- lm(prdct_value ~ df$weight)
+abline(fit_line, col = "red", lwd = 2)
+
+# Add grid and legend
+grid()
+legend("topleft", legend = c("Predicted Points", "Ideal Line (y = x)", "Fit Line"),
+       col = c("darkgreen", "blue", "red"), pch = c(16, NA, NA),
+       lty = c(NA, 2, 1), lwd = c(NA, 2, 2), bty = "n")
+
+# Calculate RMSE (Root Mean Squared Error)
+err <- sqrt(mean((df$weight - prdct_value)^2))
+print(paste("RMSE:", round(err, 2)))
