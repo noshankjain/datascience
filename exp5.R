@@ -1,5 +1,5 @@
 #5
-ata(iris)
+data(iris)
 num_data<-iris[,1:4]
 num_data
 cor_matrix<-cor(num_data)
